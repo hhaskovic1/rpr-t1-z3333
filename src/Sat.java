@@ -2,30 +2,30 @@ class Sat {
 
     int sati,minute,sekunde;
 
-    Sat(int sati, int minute, int sekunde) { Postavi(sati,minute,sekunde); }
+    Sat(int sati, int minute, int sekunde) { postavi(sati,minute,sekunde); }
 
-    void Postavi(int sati, int minute, int sekunde) { this.sati=sati; this.minute=minute; this.sekunde=sekunde; }
+    void postavi(int sati, int minute, int sekunde) { this.sati=sati; this.minute=minute; this.sekunde=sekunde; }
 
-    void Sljedeci() {
+    void sljedeci() {
         sekunde++;
         if (sekunde==60) { sekunde=0; minute++; }
         if (minute==60) { minute=0; sati++; }
         if (sati==24) sati=0;
     }
-    void Prethodni() {
+    void prethodni() {
         sekunde--;
         if (sekunde==-1) { sekunde=59; minute--; }
         if (minute==-1) { minute=59; sati--; }
         if (sati==-1) sati=23;
     }
-    void PomjeriZa(int pomak) {
-        if (pomak>0) for (int i=0; i<pomak; i++) Sljedeci();
-		else for (int i=0; i<-pomak; i++) Prethodni();
+    void pomjeriZa(int pomak) {
+        if (pomak>0) for (int i=0; i<pomak; i++) sljedeci();
+		else for (int i=0; i<-pomak; i++) prethodni();
     }
-    int DajSate()  { return sati; }
-    int DajMinute()  { return minute; }
-    int DajSekunde()  { return sekunde; }
-    void Ispisi() {
+    int dajSate()  { return sati; }
+    int dajMinute()  { return minute; }
+    int dajSekunde()  { return sekunde; }
+    void ispisi() {
         System.out.println(sati+":"+minute+":"+sekunde);
     }
 
